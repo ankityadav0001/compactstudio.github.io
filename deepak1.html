@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compact Studio</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+    }
+    body {
+  background-image: url("https://i.pinimg.com/originals/76/eb/71/76eb71063378a47613b199192231e286.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      width: 100%;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .services {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .services h2 {
+      margin-bottom: 20px;
+    }
+
+    .services p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Compact Studio</h1><h4>by DEEPAK SHARMA</h4>
+    <hr>
+  </header>
+  <main>
+    <section class="section">
+      <h2>Our Services</h2><hr>
+      <div class="services">
+        <div>
+          <h3>Videography</h3><hr>
+          <p>We specialize in creating visually appealing and user-friendly websites for our clients.</p>
+          <video width="320" height="240" controls>
+            <source src="https://www.instagram.com/theweddingdestiny/reels/" type="video/mp4">
+            <source src="https://www.instagram.com/theweddingdestiny/reels/" type="video/webm">
+            Your browser does not support the video tag.
+          </video>
+          
+          
+          
+
+
+
+        </div>
+        <div>
+          <h3>Portrait Photography</h3><hr>
+          <p>Our team of designers create stunning graphics for branding, marketing materials, and more.</p>
+        </div>
+        <div>
+          <h3>Cinematography</h3><hr>
+          <p>We help businesses reach their target audience through digital channels and improve their online presence.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <h2>About Us</h2><hr>
+      <p>We are a digital studio that specializes in helping businesses reach their online potential through exceptional web design, graphic design, and digital marketing services.</p>
+    </section>
+    <section class="section">
+      <h2>Contact Us</h2><hr>
+      <p>Get in touch with us to learn more about our services and how we can help your business succeed online.</p>
+      <p>Phone: (91+)- 7053864363</p>
+      <p>Email: dpksharma7898@.com</p>
+    </section>
+    <section>
+      <h3>Follow us on</h3>
+      <a href="https://www.youtube.com/channel/UCV4tTYWPinQtKg_gwMNnh9g"target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/800px-YouTube_full-color_icon_%282017%29.svg.png"height="30"></a>
+      <a href="https://www.facebook.com/officaldeepak1999"target="_blank"><img src="https://www.shutterstock.com/image-photo/valencia-spain-march-05-2017-260nw-593204357.jpg"height="30"></a>
+      <a href="https://www.instagram.com/deepak_d.o.p51/"target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"height="30" ></a>
+    </section>
+  </main>
+  <footer>
+    <section class="section">
+        <h2>Reviews</h2><hr>
+        <div class="reviews">
+          <div class="review">
+            <p class="review-text">This digital studio is amazing! They did an incredible job on my website and I highly recommend them to anyone looking for quality work.</p>
+            <p class="review-author">- Arun Chauhan</p>
+          </div>
+          <div class="review">
+            <p class="review-text">I had a fantastic experience working with the team at Digital Studio. They were professional, creative, and delivered exactly what I was looking for.</p>
+            <p class="review-author">- Ankit Yadav</p>
+          </div>
+        </div>
+        <form id="review-form">
+          <textarea id="review-input"></textarea>
+          <button type="submit">Submit Review</button>
+        </form>
+      </section>
+      
+      <style>
+        .reviews {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      
+        .review {
+          margin-bottom: 20px;
+          text-align: center;
+        }
+      
+        .review-text {
+          font-size: 18px;
+        }
+      
+        .review-author {
+          font-style: italic;
+        }
+      
+        #review-form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 20px;
+        }
+      
+        #review-input {
+          width: 50%;
+          height: 100px;
+          margin-bottom: 20px;
+        }
+      </style>
+      
+      <script>
+        const form = document.getElementById("review-form");
+        const input = document.getElementById("review-input");
+        const reviewsContainer = document.querySelector(".reviews");
+      
+        form.addEventListener("submit", function(event) {
+          event.preventDefault();
+          const review = input.value;
+          const reviewContainer = document.createElement("div");
+          reviewContainer.classList.add("review");
+          reviewContainer.innerHTML = `
+            <p class="review-text">${review}</p>
+            <p class="review-author">- Anonymous</p>
+          `;
+          reviewsContainer.appendChild(reviewContainer);
+          input.value = "";
+        });
+      </script>
+      <!DOCTYPE html>
+      <html>
+        <head>
+         <title>Upload Pictures</title>
+        </head>
+        <body>
+          <h1>Upload Pictures</h1>
+          <form>
+            <input type="file" id="fileInput" multiple />
+            <br /><br />
+            <button onclick="uploadFiles()">Upload</button>
+          </form>
+          <div id="preview"></div>
+      
+          <script>
+            function uploadFiles() {
+              var files = document.getElementById("fileInput").files;
+              for (var i = 0; i < files.length; i++) {
+                previewImage(files[i]);
+              }
+            }
+      
+            function previewImage(file) {
+              var reader = new FileReader();
+              reader.onload = function(event) {
+                var img = new Image();
+                img.src = event.target.result;
+                document.getElementById("preview").appendChild(img);
+              };
+              reader.readAsDataURL(file);
+            }
+          </script>
+        </body>
+      </html>
+      
+      
+                <pre>                                                                &copy; Compact Studio 2020</pre>
+  </footer>
+</body>
+</html>
